@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="css/climatempo.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="weather-container">
+        <h1>☀️ Previsão do Tempo</h1>
+        <center><div id="current-weather">
+            <button id="refresh" class="refreshWeather" onclick="getTime()"><i class="icone fa-solid fa-rotate-right"></i></button> 
+            <h2 id="city-name"></h2>
+            <img id="weather-icon" src="">
+            <p class="temperatura">Temperatura: <span id="temperature"></span></p>
+            <p id="description"></p>
+            <p class="atualizacao" id="atualizacao">Última atualização: </p>
+            
+        </div></center>
+    </div>
+    <footer>
+        <p>Criado por <a href="https://andresilveiraeng.github.io/index.html">André Silveira</a></p>
+    </footer>
+    <script src="jss/climatempo.js"></script> 
+</body>
+</html>
