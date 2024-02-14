@@ -57,6 +57,7 @@ async function getTime() {
     const bodyElement = document.body; 
     const feels_like = parseInt(data.current.feels_like);
     const wind = parseFloat(data.current.wind_speed);
+    const humidity = parseInt(data.current.humidity);
 
     switch(description) {
       case 'nublado': 
@@ -75,7 +76,7 @@ async function getTime() {
         document.getElementById('weather-icon').src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
         bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
         break;
-      case 'aberto': 
+      case 'céu limpo': 
         document.getElementById('weather-icon').src = `icons/sunny.png`;
         bodyElement.style.backgroundImage = "url('https://64.media.tumblr.com/20ae86bff21fc9f8ef429b765c976617/tumblr_nll2p92jex1r93041o1_540.gif')";
         break;
@@ -96,6 +97,7 @@ async function getTime() {
     document.getElementById('description').textContent = description.charAt(0).toUpperCase() + description.slice(1);
     document.getElementById('wind').textContent = `${wind} m/s`;
     document.getElementById('feels_like').textContent = `${feels_like}°C`
+    document.getElementById('humidity').textContent = `${humidity}%`
   
     updateLastUpdateTime();
   }

@@ -8,21 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div id="weather-container">
-        <h1>☀️ Previsão do Tempo</h1>
-        <center><div id="current-weather">
+    <h1>☀️ Previsão do Tempo</h1>
+    <section id="weather-container">
+        <div id="current-weather">
             <button id="refresh" class="refreshWeather" onclick="getTime()"><i class="icone fa-solid fa-rotate-right"></i></button> 
             <h2 id="city-name"></h2>
             <img id="weather-icon" src="">
             <p class="temperatura">Temperatura: <span id="temperature"></span></p>
             <p id="description"></p>
             <div class="informacoes-gerais" id="informacoes-gerais">
-                <p><i class="fa-solid fa-wind" ><span id="wind"></span></i></p>
-                <p><i class="fa-solid fa-thermometer"><span id="feels_like"></span></i></p>
+                <p><i class="fa-solid fa-wind" ></i><span id="wind"></span></p>
+                <p><i class="fa-solid fa-thermometer"></i><span id="feels_like"></span></p>
+            </div>
+            <div class="informacoes-gerais" id="informacoes-gerais">
+                <p><i class="fa-solid fa-droplet"></i><span id="humidity"></span></p>
             </div>
             <p class="atualizacao" id="atualizacao">Última atualização: </p>
-        </div></center>
-    </div>
+        </div>
+        
+        <!-- Próximos dias -->
+
+        <div class="next-weather">
+            <h2 class="h2-tag">Próximos dias</h2>
+        </div>
+    </section>
+    
     <footer>
         <p>Criado por <a href="https://andresilveiraeng.github.io/index.html">André Silveira</a></p>
     </footer>
