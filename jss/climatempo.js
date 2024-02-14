@@ -55,6 +55,8 @@ async function getTime() {
     const temperature = parseInt(data.current.temp);
     const description = data.current.weather[0].description;
     const bodyElement = document.body; 
+    const feels_like = parseInt(data.current.feels_like);
+    const wind = parseFloat(data.current.wind_speed);
 
     switch(description) {
       case 'nublado': 
@@ -92,6 +94,8 @@ async function getTime() {
   
     document.getElementById('temperature').textContent = `${temperature}°C`;
     document.getElementById('description').textContent = description.charAt(0).toUpperCase() + description.slice(1);
+    document.getElementById('wind').textContent = `${wind} m/s`;
+    document.getElementById('feels_like').textContent = `${feels_like}°C`
   
     updateLastUpdateTime();
   }

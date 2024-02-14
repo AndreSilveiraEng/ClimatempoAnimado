@@ -70,3 +70,17 @@ footer a {
     cursor: pointer; 
 
 }
+
+.informacoes-gerais {
+    display: inline-flex;
+}
+
+.informacoes-gerais p {
+    font-size: 15px;
+    margin-inline: 1.2rem;
+    
+}
+
+.informacoes-gerais span {
+    margin-left: 1em;
+}
