@@ -1,7 +1,7 @@
 const access_token = 'dfe0e60c427e0c05719bc698bd644eb9';
 
 async function getCityName(latitude, longitude, accessToken) {
-    const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${accessToken}`;
+    const url = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${accessToken}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -85,6 +85,10 @@ async function getTime() {
         bodyElement.style.backgroundImage = "url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3cxeTZ1c3Uya3libWFybWowNXNzMGQxbjc4aWVsN3h3Y3FuOWlwMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IuVFGSQZTd6TK/giphy.gif')";
         break;
       case 'chuva leve': 
+        document.getElementById('weather-icon').src = `icons/rain.png`;
+        bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
+        break;
+      case 'garoa de leve intensidade': 
         document.getElementById('weather-icon').src = `icons/rain.png`;
         bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
         break;
