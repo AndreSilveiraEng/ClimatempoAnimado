@@ -23,7 +23,7 @@ body {
 }
 
 #current-weather {
-    background-color: rgba(233, 233, 233, 0.801);
+    background-color: rgba(255, 255, 255, 0.884);
     color: black;
     flex-grow: 1;
     flex-shrink: 1;
@@ -32,6 +32,7 @@ body {
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
+    box-shadow: 1px 2px rgba(36, 36, 36, 0.945);
 }
 
 .next-weather {

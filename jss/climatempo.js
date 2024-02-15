@@ -105,5 +105,5 @@ async function getTime() {
   
     updateLastUpdateTime();
   }
-  
+
   getTime();
