@@ -114,21 +114,3 @@ footer a {
     font-weight: bolder;
     text-transform: capitalize;
 }
-
-#next-weather {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 10px; 
-}
-
-.forecast-day {
-    flex: 1 1 180px; 
-    
-}
-
-@media (max-width: 600px) {
-    .forecast-day {
-        flex-basis: 100%; 
-    }
-}

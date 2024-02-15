@@ -136,5 +136,4 @@ function updateForecastUI(data) {
   });
 }
 
-
   getTime();
