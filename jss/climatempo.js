@@ -94,7 +94,7 @@ async function getTime() {
         bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
         break;
       default: 
-        document.getElementById('weather-icon').src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
         bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
     }
   
@@ -117,8 +117,15 @@ function updateForecastUI(data) {
   data.daily.slice(1, 6).forEach(day => {
       const date = new Date(day.dt * 1000); // Converte timestamp para objeto Date
       const dayName = date.toLocaleDateString('pt-BR', { weekday: 'long' }); // Obtém o nome do dia da semana
-      const iconUrl = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`; // URL do ícone meteorológico
-
+      const iconUrl = `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`; // URL do ícone meteorológico
+      switch (day.summary) {
+        case 'Expect a day of partly cloudy with rain': 
+          day.summary = 'Espere um dia parcialmente nublado e com chuva ☂️'
+          break;
+        case 'You can expect partly cloudy in the morning, with rain in the afternoon':
+          day.summary = 'Espere um dia parcialmente nublado pela manhã, com chuva ao final da tarde ☕'
+          break;
+      }
       // Cria o HTML para o dia atual da previsão
       const dayForecastHTML = `
           <div class="forecast-day">
