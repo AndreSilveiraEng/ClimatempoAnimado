@@ -117,7 +117,7 @@ function updateForecastUI(data) {
   data.daily.slice(1, 6).forEach(day => {
       const date = new Date(day.dt * 1000); // Converte timestamp para objeto Date
       const dayName = date.toLocaleDateString('pt-BR', { weekday: 'long' }); // Obtém o nome do dia da semana
-      const iconUrl = `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`; // URL do ícone meteorológico
+      let iconUrl = `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`; // URL do ícone meteorológico
       switch (day.summary) {
         case 'Expect a day of partly cloudy with rain': 
           day.summary = 'Espere um dia parcialmente nublado e com chuva ☂️'
@@ -125,7 +125,38 @@ function updateForecastUI(data) {
         case 'You can expect partly cloudy in the morning, with rain in the afternoon':
           day.summary = 'Espere um dia parcialmente nublado pela manhã, com chuva ao final da tarde ☕'
           break;
+        case 'There will be partly cloudy until morning, then rain':
+          day.summary = 'Espere um dia parcialmente nublado pela manhã e com chuva após o almoço 🥙'
+          break;
+        case 'There will be rain today':
+            day.summary = 'O dia será chuvoso 🌧️'
+            break;
       }
+
+      switch (day.weather[0].main){
+        case "Rain":
+          iconUrl = `icons/rainB.png`
+          break;
+        case "Clouds":
+          iconUrl = `icons/nublado.png`
+          break;
+        case "Clear":
+          iconUrl = `icons/rain.png`
+          break;
+        case "Atmosphere":
+          iconUrl = `icons/rain.png`
+          break;
+        case "Snow":
+          iconUrl = `icons/rain.png`
+          break;
+        case "Drizzle":
+          iconUrl = `icons/drizzle.png`
+          break;
+        case "Thunderstorm":
+          iconUrl = `icons/rain.png`
+          break;
+      }
+      
       // Cria o HTML para o dia atual da previsão
       const dayForecastHTML = `
           <div class="forecast-day">
