@@ -63,7 +63,7 @@ async function getTime() {
     switch(description) {
       case 'nublado': 
         document.getElementById('weather-icon').src = `icons/nublado.png`;
-        bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
+        bodyElement.style = ".container{background-color: #007ced;background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%);}#cloud-intro{position: relative;height: 100%;background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);background: url(https://static.radulescu.me/examples/clouds/clouds1000.png) 0 200px,url(https://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px,url(https://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px 250px;animation: wind 20s linear infinite;}@keyframes wind{0% {background-position: 0 200px, 0 300px, 100px 250px;}100% {background-position: 1000px 200px, 1200px 300px, 1100px 250px;}}";
         break;
       case 'nuvens dispersas': 
         document.getElementById('weather-icon').src = `icons/cloudy.png`;
@@ -72,6 +72,7 @@ async function getTime() {
       case 'chuva': 
         document.getElementById('weather-icon').src = `icons/rain.png`;
         bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
+        document.getElementById("cloud-intro").style.background = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')"
         break;
       case 'nevoeiro': 
         document.getElementById('weather-icon').src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
