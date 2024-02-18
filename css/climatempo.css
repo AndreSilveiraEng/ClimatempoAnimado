@@ -10,18 +10,22 @@ main {
 .footer {
     padding: 1rem;
     background-color: rgb(34, 34, 34);
+    color: white;
 }
 
 h1 {
     padding-top: 1.5rem;
+    color: white;
 }
 
 .hoje {
     padding-top: 0rem;
     padding-bottom: 2rem;
     margin-top: -2rem;
+    color: white;
 }
 
+/*
 .container{
     background-color: #007ced;
       background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%);
@@ -29,6 +33,7 @@ h1 {
       padding: 0;
       flex-direction: column;
 }
+
 
 #cloud-intro{
   position: relative;
@@ -39,6 +44,7 @@ h1 {
               url(https://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px 250px;
     animation: wind 20s linear infinite;
 }
+*/
 
 @keyframes wind{
   0% {
@@ -56,7 +62,7 @@ body {
     background-image: url("");
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(245, 245, 245);
+    height: 100%;
     
 }
 
@@ -74,7 +80,7 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(16px);
     border: 3px solid rgba(255, 255, 255, 0.555);
-    color: black;
+    color: rgb(255, 255, 255);
     flex-grow: 1;
     flex-shrink: 1;
     border-radius: 2rem;
@@ -143,7 +149,7 @@ body {
 
 footer a {
     text-decoration: underline;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     cursor: pointer; 
 
 }
@@ -156,6 +162,10 @@ footer a {
     font-size: 15px;
     margin-inline: 1.2rem;
     
+}
+
+.informacoes-gerais i {
+    color: black;
 }
 
 .informacoes-gerais span {

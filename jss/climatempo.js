@@ -71,7 +71,6 @@ async function getTime() {
         break;
       case 'chuva': 
         document.getElementById('weather-icon').src = `icons/rain.png`;
-        bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
         document.getElementById("cloud-intro").style.background = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')"
         break;
       case 'nevoeiro': 
@@ -93,6 +92,12 @@ async function getTime() {
       case 'garoa de leve intensidade': 
         document.getElementById('weather-icon').src = `icons/rain.png`;
         bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
+        break;
+      case 'trovoadas': 
+        document.getElementById('weather-icon').src = `icons/lightning.webp`;
+        document.getElementById("cloud-intro").style.background = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')"
+        document.getElementById("cloud-intro").style.backgroundRepeat = "no-repeat"
+        document.getElementById("cloud-intro").style.backgroundSize = "cover"
         break;
       default: 
         document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
