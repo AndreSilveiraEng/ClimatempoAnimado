@@ -9,10 +9,17 @@ main {
 
 .footer {
     padding: 1rem;
+    background-color: rgb(34, 34, 34);
 }
 
 h1 {
-    padding-top: 1.2rem;
+    padding-top: 1.5rem;
+}
+
+.hoje {
+    padding-top: 0rem;
+    padding-bottom: 2rem;
+    margin-top: -2rem;
 }
 
 .container{
@@ -21,7 +28,6 @@ h1 {
       margin: 0;
       padding: 0;
       flex-direction: column;
-      height: 100vh;
 }
 
 #cloud-intro{
