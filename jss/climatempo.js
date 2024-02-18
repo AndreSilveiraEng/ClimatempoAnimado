@@ -59,19 +59,23 @@ async function getTime() {
     const feels_like = parseInt(data.current.feels_like);
     const wind = parseFloat(data.current.wind_speed);
     const humidity = parseInt(data.current.humidity);
+    const cloudIntro = document.getElementById("cloud-intro")
 
     switch(description) {
       case 'nublado': 
         document.getElementById('weather-icon').src = `icons/nublado.png`;
-        bodyElement.style = ".container{background-color: #007ced;background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%);}#cloud-intro{position: relative;height: 100%;background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);background: url(https://static.radulescu.me/examples/clouds/clouds1000.png) 0 200px,url(https://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px,url(https://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px 250px;animation: wind 20s linear infinite;}@keyframes wind{0% {background-position: 0 200px, 0 300px, 100px 250px;}100% {background-position: 1000px 200px, 1200px 300px, 1100px 250px;}}";
+        bodyElement.style = "background-color: #007ced;background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%);";
+        cloudIntro.style = "position: relative;height: 100%;background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);background: url(https://static.radulescu.me/examples/clouds/clouds1000.png) 0 200px,url(https://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px,url(https://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px 250px;animation: wind 20s linear infinite;"
         break;
       case 'nuvens dispersas': 
         document.getElementById('weather-icon').src = `icons/cloudy.png`;
         bodyElement.style.backgroundImage = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
         break;
-      case 'chuva': 
+      case 'chuva moderada': 
         document.getElementById('weather-icon').src = `icons/rain.png`;
-        document.getElementById("cloud-intro").style.background = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')"
+        cloudIntro.style.background = "url('https://img.wattpad.com/5aa4182dd59d4b51b4ecf89dc5e225c9fad58bbd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f79426a694974494d3268647555413d3d2d31342e313636386365333465326437393362623533393934303137333137362e676966')";
+        cloudIntro.style.backgroundRepeat = 'no-repeat';
+        cloudIntro.style.backgroundSize = 'cover';
         break;
       case 'nevoeiro': 
         document.getElementById('weather-icon').src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
@@ -83,7 +87,10 @@ async function getTime() {
         break;
       case 'trovoada com chuva fraca': 
         document.getElementById('weather-icon').src = `icons/rain.png`;
-        bodyElement.style.backgroundImage = "url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3cxeTZ1c3Uya3libWFybWowNXNzMGQxbjc4aWVsN3h3Y3FuOWlwMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IuVFGSQZTd6TK/giphy.gif')";
+        cloudIntro.style.backgroundImage = "url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3cxeTZ1c3Uya3libWFybWowNXNzMGQxbjc4aWVsN3h3Y3FuOWlwMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IuVFGSQZTd6TK/giphy.gif')";
+        cloudIntro.style.backgroundRepeat = 'no-repeat';
+        cloudIntro.style.backgroundSize = 'cover';
+        cloudIntro.style.backgroundPosition = 'center'
         break;
       case 'chuva leve': 
         document.getElementById('weather-icon').src = `icons/rain.png`;
@@ -166,21 +173,23 @@ function updateForecastUI(data) {
           break;
       }
       
-      // Cria o HTML para o dia atual da previsão
+      
       const dayForecastHTML = `
           <div class="forecast-day">
               <h3 class="descricao-dias">${dayName}</h3>
               <img src="${iconUrl}" alt="${day.weather[0].description}">
               <p class="descricao-dias">${day.weather[0].description}</p>
               <p>${day.summary}</p>
-              <p>Temp. Máx: ${day.temp.max.toFixed(1)}°C</p>
-              <p>Temp. Mín: ${day.temp.min.toFixed(1)}°C</p>
+              <div class="temp-max">
+              <p><b>Temp. Máx:</b> ${day.temp.max.toFixed(1)}°C</p>
+              <p><b>Temp. Mín:</b> ${day.temp.min.toFixed(1)}°C</p>
+              </div>
           </div>
       `;
 
-      // Adiciona o HTML ao container de previsão
       forecastContainer.innerHTML += dayForecastHTML;
   });
 }
 
   getTime();
+
