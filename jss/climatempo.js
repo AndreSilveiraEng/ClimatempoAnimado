@@ -132,6 +132,9 @@ function updateForecastUI(data) {
         case 'There will be rain today':
             day.summary = 'O dia será chuvoso 🌧️'
             break;
+        case 'The day will start with partly cloudy through the late morning hours, transitioning to rain':
+          day.summary = 'O dia iniciará parcialmente nublado até o final da manhã, transicionando para a chuva ☕'
+          break;
       }
 
       switch (day.weather[0].main){
