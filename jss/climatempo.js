@@ -123,14 +123,14 @@ async function getTime() {
 // Próximos dias
 
 function updateForecastUI(data) {
-  const forecastContainer = document.getElementById('next-weather'); // Certifique-se de que este é o ID correto do seu container de previsão
-  forecastContainer.innerHTML = ''; // Limpa o conteúdo anterior
+  const forecastContainer = document.getElementById('next-weather'); 
+  forecastContainer.innerHTML = ''; 
 
-  // Itera sobre os primeiros 5 dias da previsão diária
+
   data.daily.slice(1, 6).forEach(day => {
-      const date = new Date(day.dt * 1000); // Converte timestamp para objeto Date
-      const dayName = date.toLocaleDateString('pt-BR', { weekday: 'long' }); // Obtém o nome do dia da semana
-      let iconUrl = `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`; // URL do ícone meteorológico
+      const date = new Date(day.dt * 1000); 
+      const dayName = date.toLocaleDateString('pt-BR', { weekday: 'long' }); 
+      let iconUrl = `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`; 
       switch (day.summary) {
         case 'Expect a day of partly cloudy with rain': 
           day.summary = 'Espere um dia parcialmente nublado e com chuva ☂️'
